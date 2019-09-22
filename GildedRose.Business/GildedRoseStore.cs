@@ -23,7 +23,33 @@ namespace GildedRose.Business
         {
             foreach (var item in Items)
             {
-                if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                {
+
+                    if (item.Quality < 50)
+                    {
+                        item.Quality += 1;
+
+                            if (item.SellIn < 11)
+                            {
+                                item.Quality += 1;
+                            }
+
+                            if (item.SellIn < 6)
+                            {
+                                item.Quality += 1;
+                            }
+                        }
+                }
+                else if (item.Name == "Aged Brie")
+                    {
+
+                        if (item.Quality < 50)
+                        {
+                            item.Quality += 1;
+                        }
+                    }
+                    else
                 {
                     if (item.Quality > 0)
                     {
@@ -32,32 +58,6 @@ namespace GildedRose.Business
                             continue;
                         }
                         item.Quality -= 1;
-                    }
-                }
-                else
-                {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality += 1;
-
-                        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (item.SellIn < 11)
-                            {
-                                if (item.Quality < 50)
-                                {
-                                    item.Quality += 1;
-                                }
-                            }
-
-                            if (item.SellIn < 6)
-                            {
-                                if (item.Quality < 50)
-                                {
-                                    item.Quality += 1;
-                                }
-                            }
-                        }
                     }
                 }
 
