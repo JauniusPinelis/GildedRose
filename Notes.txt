@@ -12,3 +12,4 @@
 9. Adding Unit Tests for BackStagePass item.
 10. Tests have been added and they all pass - now it should (hopefully..) be safe to refactor.
 11. for -> foreach
+12. "item.SellIn = item.SellIn - 1" -> "item.sellin -=1" and similar.

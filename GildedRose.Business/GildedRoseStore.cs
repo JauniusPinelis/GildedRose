@@ -29,7 +29,7 @@ namespace GildedRose.Business
                     {
                         if (item.Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            item.Quality = item.Quality - 1;
+                            item.Quality -= 1;
                         }
                     }
                 }
@@ -37,7 +37,7 @@ namespace GildedRose.Business
                 {
                     if (item.Quality < 50)
                     {
-                        item.Quality = item.Quality + 1;
+                        item.Quality += 1;
 
                         if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                         {
@@ -45,7 +45,7 @@ namespace GildedRose.Business
                             {
                                 if (item.Quality < 50)
                                 {
-                                    item.Quality = item.Quality + 1;
+                                    item.Quality += 1;
                                 }
                             }
 
@@ -53,7 +53,7 @@ namespace GildedRose.Business
                             {
                                 if (item.Quality < 50)
                                 {
-                                    item.Quality = item.Quality + 1;
+                                    item.Quality += 1;
                                 }
                             }
                         }
@@ -62,7 +62,7 @@ namespace GildedRose.Business
 
                 if (item.Name != "Sulfuras, Hand of Ragnaros")
                 {
-                    item.SellIn = item.SellIn - 1;
+                    item.SellIn -= 1;
                 }
 
                 if (item.SellIn < 0)
@@ -75,7 +75,7 @@ namespace GildedRose.Business
                             {
                                 if (item.Name != "Sulfuras, Hand of Ragnaros")
                                 {
-                                    item.Quality = item.Quality - 1;
+                                    item.Quality -= 1;
                                 }
                             }
                         }
@@ -88,7 +88,7 @@ namespace GildedRose.Business
                     {
                         if (item.Quality < 50)
                         {
-                            item.Quality = item.Quality + 1;
+                            item.Quality += 1;
                         }
                     }
                 }
