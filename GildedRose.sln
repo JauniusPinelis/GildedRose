@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharpcore", "csharpcore.csproj", "{BCBB8CB2-31E4-4661-B530-6B98FC054E73}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose.Business", "GildedRose.Business\GildedRose.Business.csproj", "{1F507908-8F93-48B7-B171-5FA44587DBD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose.ConsoleApp", "GildedRose.ConsoleApp\GildedRose.ConsoleApp.csproj", "{52C0DA78-F50D-4D30-9DCE-B2545DCD1CCF}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BCBB8CB2-31E4-4661-B530-6B98FC054E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCBB8CB2-31E4-4661-B530-6B98FC054E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCBB8CB2-31E4-4661-B530-6B98FC054E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCBB8CB2-31E4-4661-B530-6B98FC054E73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F507908-8F93-48B7-B171-5FA44587DBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F507908-8F93-48B7-B171-5FA44587DBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F507908-8F93-48B7-B171-5FA44587DBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU

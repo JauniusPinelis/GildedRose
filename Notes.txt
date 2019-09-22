@@ -3,3 +3,4 @@
 	Business - ClassLibrary for store logic, entities, and etc
 	Console - UI
 	UnitTests - XUnitTests for Test Driven Development
+3. Removing original console project, original tests as they are not much use currently.
