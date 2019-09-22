@@ -9,4 +9,6 @@
 6. Adding Unit Tests for Normal item.
 7. Adding Unit Tests for Sulfuras item.
 8. Adding Unit Tests for Aged Brie item.
-9. Adding Unit Tests for BackStagePass item
+9. Adding Unit Tests for BackStagePass item.
+10. Tests have been added and they all pass - now it should (hopefully..) be safe to refactor.
+11. for -> foreach
