@@ -8,7 +8,7 @@ namespace GildedRose.ConsoleApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("OMGHAI!");
+            Print("OMGHAI!");
 
             IList<Item> Items = new List<Item>{
                 new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
@@ -43,15 +43,20 @@ namespace GildedRose.ConsoleApp
 
             for (var i = 0; i < 31; i++)
             {
-                Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
+                Print($"-------- day {i} --------");
+                Print("name, sellIn, quality");
                 for (var j = 0; j < Items.Count; j++)
                 {
-                    System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
+                    Print($"{Items[j].Name}, {Items[j].SellIn} , {Items[j].Quality}");
                 }
-                Console.WriteLine("");
+                Print("");
                 app.UpdateQuality();
             }
+        }
+
+        public static void Print(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }
