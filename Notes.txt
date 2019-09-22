@@ -14,3 +14,5 @@
 11. for -> foreach
 12. "item.SellIn = item.SellIn - 1" -> "item.sellin -=1" and similar.
 13. Refactor 'item.Quality = item.Quality - item.Quality;'
+14. Will be fiddling with if statements: the aim is to isolate behaviour/ updates of each item.
+15. Replacing "not equal" if statements with "equal"
