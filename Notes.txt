@@ -28,3 +28,12 @@ As Item cannot be modified by requirements, an Item extension has been used. Tes
 23. Adding Unit Tests for Conjured item.
 24. Adding new strategy for conjured and adding it in the factory. Conjured Tests Pass.
 25. Making minor refactors in Program class (leaving items unchanged as in requirements).
+
+Possible improvements and thoughts:
+1. Next big improvement to use Dependency Injection. StrategyFactory and GildedRoseStore should be registered as services, 
+Imapper should be added as well. I am not too sure how to add it without Startup.cs and Controllers, could google it,
+but configuring it, thinking how to pass Items properly would probs take me at least an hour or two.
+2. There a few places where some lines could be saved by use Mapper. Default Asp.net Mapper would work in this case.
+3. I feel like UnitTests cover most of the edge cases, but they could be structured better, names could be changed as I am mainly testing the same function,
+lots of repetitions.
+
