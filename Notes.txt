@@ -6,6 +6,7 @@
 3. Removing original console project, original tests as they are not much use currently.
 4. Fixing namespaces, adding references to Business projects and making other changes to make sure the solution builds.
 5. The solutions now builds and run - tests will be added before any more refactoring takes place.
-6. Adding Unit Tests for Normal Item.
-7. Adding Unit Tests for Sulfuras Item.
-8. Adding Unit Tests for Aged Brie.
+6. Adding Unit Tests for Normal item.
+7. Adding Unit Tests for Sulfuras item.
+8. Adding Unit Tests for Aged Brie item.
+9. Adding Unit Tests for BackStagePass item
