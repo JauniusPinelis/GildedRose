@@ -22,3 +22,6 @@
 18. Trying to move updates into 'if' statements to isolate value changes of each item type
 19. Now since we have clear if statements we can refactor 'UpdateQuality' method into something more extensible.
 20. Will try to use Strategy Pattern, to extract each item Type update into some kind of 'Update Strategy'.
+21. UpdateQuality has been complitely reworked by a StrategyFactory which builds strategies which can be applied on Items to be updated.
+As Item cannot be modified by requirements, an Item extension has been used. Tests pass.
+22. Now 'Conjured' item can be added quite easily - starting with tests.
