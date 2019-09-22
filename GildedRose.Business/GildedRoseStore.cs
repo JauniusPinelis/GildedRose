@@ -10,6 +10,15 @@ namespace GildedRose.Business
             this.Items = Items;
         }
 
+        /// <summary>
+        /// Since requirements do not allow editting Items List and making it public property I have to use 
+        /// a function which returns items
+        /// </summary>
+        public IList<Item> GetItems()
+        {
+            return Items;
+        }
+
         public void UpdateQuality()
         {
             for (var i = 0; i < Items.Count; i++)
