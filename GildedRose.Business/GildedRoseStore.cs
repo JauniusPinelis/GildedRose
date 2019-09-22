@@ -81,7 +81,7 @@ namespace GildedRose.Business
                         }
                         else
                         {
-                            item.Quality = item.Quality - item.Quality;
+                            item.Quality = 0;
                         }
                     }
                     else
