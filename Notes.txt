@@ -25,3 +25,5 @@
 21. UpdateQuality has been complitely reworked by a StrategyFactory which builds strategies which can be applied on Items to be updated.
 As Item cannot be modified by requirements, an Item extension has been used. Tests pass.
 22. Now 'Conjured' item can be added quite easily - starting with tests.
+23. Adding Unit Tests for Conjured item.
+24. Adding new strategy for conjured and adding it in the factory

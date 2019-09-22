@@ -17,7 +17,8 @@ namespace GildedRose.Business.Services
                     return new SulfurasStrategy();
                 case "Backstage passes to a TAFKAL80ETC concert":
                     return new BackStagePassStrategy();
-                
+                case "Conjured Mana Cake":
+                    return new ConjuredStrategy();
                 default:
                     return new NormalStrategy();
             }
