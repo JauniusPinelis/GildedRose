@@ -1,7 +1,8 @@
-﻿using System;
+﻿using GildedRose.Business;
+using System;
 using System.Collections.Generic;
 
-namespace csharpcore
+namespace GildedRose.ConsoleApp
 {
     public class Program
     {
@@ -37,7 +38,7 @@ namespace csharpcore
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            var app = new GildedRose(Items);
+            var app = new GildedRoseStore(Items);
 
 
             for (var i = 0; i < 31; i++)

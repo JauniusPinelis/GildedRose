@@ -4,3 +4,4 @@
 	Console - UI
 	UnitTests - XUnitTests for Test Driven Development
 3. Removing original console project, original tests as they are not much use currently.
+4. Fixing namespaces, adding references to Business projects and making other changes to make sure the solution builds.

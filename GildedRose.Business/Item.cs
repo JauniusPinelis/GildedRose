@@ -1,4 +1,4 @@
-﻿namespace csharpcore
+﻿namespace GildedRose.Business
 {
     public class Item
     {
