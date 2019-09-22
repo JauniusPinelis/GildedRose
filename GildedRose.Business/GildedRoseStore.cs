@@ -29,64 +29,66 @@ namespace GildedRose.Business
                 }
                 if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-
                     if (item.Quality < 50)
                     {
                         item.Quality += 1;
 
-                            if (item.SellIn < 11)
-                            {
-                                item.Quality += 1;
-                            }
-
-                            if (item.SellIn < 6)
-                            {
-                                item.Quality += 1;
-                            }
+                        if (item.SellIn < 11)
+                        {
+                            item.Quality += 1;
                         }
-                }
-                else if (item.Name == "Aged Brie")
-                    {
 
-                        if (item.Quality < 50)
+                        if (item.SellIn < 6)
                         {
                             item.Quality += 1;
                         }
                     }
-                    else
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
+                    {
+                        item.Quality = 0;
+                    }
+                }
+                else if (item.Name == "Aged Brie")
+                {
+
+                    if (item.Quality < 50)
+                    {
+                        item.Quality += 1;
+                    }
+                    item.SellIn -= 1;
+                    if (item.SellIn < 0)
+                    {
+                        item.Quality += 1;
+                    }
+                }
+                else //normal item
                 {
                     if (item.Quality > 0)
                     {
-                       
                         item.Quality -= 1;
                     }
+                    item.SellIn -= 1;
                 }
-
-               
-                item.SellIn -= 1;
 
                 if (item.SellIn < 0)
                 {
                     if (item.Name == "Aged Brie")
                     {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality += 1;
-                        }
-                       
+
                     }
                     else
                     {
                         if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                         {
-                            item.Quality = 0;
+                          
                         }
                         else
                         {
-                            
+
                             if (item.Quality > 0)
                             {
-                                
                                 item.Quality -= 1;
                             }
                         }
