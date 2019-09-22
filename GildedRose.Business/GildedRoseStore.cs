@@ -23,6 +23,10 @@ namespace GildedRose.Business
         {
             foreach (var item in Items)
             {
+                if (item.Name == "Sulfuras, Hand of Ragnaros")
+                {
+                    continue;
+                }
                 if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
 
@@ -53,18 +57,12 @@ namespace GildedRose.Business
                 {
                     if (item.Quality > 0)
                     {
-                        if (item.Name == "Sulfuras, Hand of Ragnaros")
-                        {
-                            continue;
-                        }
+                       
                         item.Quality -= 1;
                     }
                 }
 
-                if (item.Name == "Sulfuras, Hand of Ragnaros")
-                {
-                    continue;
-                }
+               
                 item.SellIn -= 1;
 
                 if (item.SellIn < 0)
@@ -88,10 +86,7 @@ namespace GildedRose.Business
                             
                             if (item.Quality > 0)
                             {
-                                if (item.Name == "Sulfuras, Hand of Ragnaros")
-                                {
-                                    continue;
-                                }
+                                
                                 item.Quality -= 1;
                             }
                         }
