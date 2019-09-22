@@ -1,13 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using GildedRose.Business.Extensions;
+using GildedRose.Business.Services;
+using System.Collections.Generic;
 
 namespace GildedRose.Business
 {
     public class GildedRoseStore
     {
         IList<Item> Items;
+
+        private IStrategyFactory _strategyFactory;
+
         public GildedRoseStore(IList<Item> Items)
         {
             this.Items = Items;
+            _strategyFactory = new StrategyFactory();
         }
 
         /// <summary>
@@ -23,78 +29,10 @@ namespace GildedRose.Business
         {
             foreach (var item in Items)
             {
-                if (item.Name == "Sulfuras, Hand of Ragnaros")
-                {
-                    continue;
-                }
-                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality += 1;
-
-                        if (item.SellIn < 11)
-                        {
-                            item.Quality += 1;
-                        }
-
-                        if (item.SellIn < 6)
-                        {
-                            item.Quality += 1;
-                        }
-                    }
-                    item.SellIn -= 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality = 0;
-                    }
-                }
-                else if (item.Name == "Aged Brie")
-                {
-
-                    if (item.Quality < 50)
-                    {
-                        item.Quality += 1;
-                    }
-                    item.SellIn -= 1;
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality += 1;
-                    }
-                }
-                else //normal item
-                {
-                    if (item.Quality > 0)
-                    {
-                        item.Quality -= 1;
-                    }
-                    item.SellIn -= 1;
-                }
-
-                if (item.SellIn < 0)
-                {
-                    if (item.Name == "Aged Brie")
-                    {
-
-                    }
-                    else
-                    {
-                        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                          
-                        }
-                        else
-                        {
-
-                            if (item.Quality > 0)
-                            {
-                                item.Quality -= 1;
-                            }
-                        }
-                    }
-                }
+                var updateStrategy = _strategyFactory.BuildStrategy(item);
+                item.ApplyStrategy(updateStrategy);
             }
         }
+
     }
 }

@@ -19,3 +19,6 @@
 16. Separating item.Name == 'Aged Brie' || item.Name == 'Backstage passes to a TAFKAL80ETC concert',
  merging some if statement together and removing unnecessary 'if' statements.
 17. Extracting Sulfuras functionality to main 'foreach' loop
+18. Trying to move updates into 'if' statements to isolate value changes of each item type
+19. Now since we have clear if statements we can refactor 'UpdateQuality' method into something more extensible.
+20. Will try to use Strategy Pattern, to extract each item Type update into some kind of 'Update Strategy'.
