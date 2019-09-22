@@ -1,1 +1,5 @@
 1. Adding GildedRose Project Files.
+2. Giving project a structure: dividing into 3 projects:
+	Business - ClassLibrary for store logic, entities, and etc
+	Console - UI
+	UnitTests - XUnitTests for Test Driven Development
