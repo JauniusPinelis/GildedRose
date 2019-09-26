@@ -10,10 +10,10 @@ namespace GildedRose.Business
 
         private IStrategyFactory _strategyFactory;
 
-        public GildedRoseStore(IList<Item> Items)
+        public GildedRoseStore(IList<Item> Items, IStrategyFactory strategyFactory)
         {
             this.Items = Items;
-            _strategyFactory = new StrategyFactory();
+            _strategyFactory = strategyFactoryl
         }
 
         /// <summary>
