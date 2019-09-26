@@ -9,12 +9,7 @@ namespace GildedRose.Business.Extensions
     {
         public static void ApplyStrategy(this Item item, IStrategy strategy)
         {
-            var strategyResult = strategy.GenerateStrategyResult(item);
-
-            // Could be replaced by a mapper
-            item.Quality = strategyResult.Quality;
-            item.SellIn = strategyResult.SellIn;
-
+            strategy.ApplyStrategy(item);
         }
     }
 }

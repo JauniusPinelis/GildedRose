@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using GildedRose.Business.Dtos;
 
 namespace GildedRose.Business.Strategies
 {
     public class ConjuredStrategy : IStrategy
     {
-        public StrategyResult GenerateStrategyResult(Item item)
+        public void ApplyStrategy(Item item)
         {
             if (item.Quality > 0)
             {
@@ -18,12 +17,6 @@ namespace GildedRose.Business.Strategies
             {
                 item.Quality -= 2;
             }
-
-            return new StrategyResult()
-            {
-                Quality = item.Quality,
-                SellIn = item.SellIn
-            };
         }
     }
 }

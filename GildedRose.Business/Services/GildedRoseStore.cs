@@ -30,6 +30,7 @@ namespace GildedRose.Business
             foreach (var item in Items)
             {
                 var updateStrategy = _strategyFactory.BuildStrategy(item);
+
                 item.ApplyStrategy(updateStrategy);
             }
         }
