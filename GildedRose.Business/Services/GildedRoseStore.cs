@@ -6,28 +6,16 @@ namespace GildedRose.Business
 {
     public class GildedRoseStore
     {
-        IList<Item> Items;
-
         private IStrategyFactory _strategyFactory;
 
-        public GildedRoseStore(IList<Item> Items, IStrategyFactory strategyFactory)
+        public GildedRoseStore(IStrategyFactory strategyFactory)
         {
-            this.Items = Items;
             _strategyFactory = strategyFactory;
         }
 
-        /// <summary>
-        /// Since requirements do not allow editting Items List and making it public property I have to use 
-        /// a function which returns items
-        /// </summary>
-        public IList<Item> GetItems()
+        public void UpdateQuality(IList<Item> items)
         {
-            return Items;
-        }
-
-        public void UpdateQuality()
-        {
-            foreach (var item in Items)
+            foreach (var item in items)
             {
                 var updateStrategy = _strategyFactory.BuildStrategy(item);
 

@@ -40,7 +40,7 @@ namespace GildedRose.ConsoleApp
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            var app = new GildedRoseStore(Items, new StrategyFactory());
+            var app = new GildedRoseStore(new StrategyFactory());
 
 
             for (var i = 0; i < 31; i++)
@@ -52,7 +52,7 @@ namespace GildedRose.ConsoleApp
                     Print($"{Items[j].Name}, {Items[j].SellIn} , {Items[j].Quality}");
                 }
                 Print("");
-                app.UpdateQuality();
+                app.UpdateQuality(Items);
             }
         }
 
