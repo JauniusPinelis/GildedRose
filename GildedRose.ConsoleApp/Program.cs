@@ -1,5 +1,5 @@
-﻿using Autofac;
-using GildedRose.Business;
+﻿using GildedRose.Business;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 
@@ -9,13 +9,13 @@ namespace GildedRose.ConsoleApp
     {
         public static void Main(string[] args)
         {
-            var container = ContainerConfig.Configure();
+            var serviceProvider = new ServiceCollection()
+            .AddSingleton<IApplication, GildedRoseApp>()
+            .BuildServiceProvider();
 
-            using (var scope = container.BeginLifetimeScope())
-            {
-                var app = scope.Resolve<IApplication>();
-                app.Run();
-            }
+            var app = serviceProvider.GetService<IApplication>();
+            app.Run();
+            
         }
     }
 }

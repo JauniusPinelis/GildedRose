@@ -13,7 +13,7 @@ namespace GildedRose.Business
         public GildedRoseStore(IList<Item> Items, IStrategyFactory strategyFactory)
         {
             this.Items = Items;
-            _strategyFactory = strategyFactoryl
+            _strategyFactory = strategyFactory;
         }
 
         /// <summary>
