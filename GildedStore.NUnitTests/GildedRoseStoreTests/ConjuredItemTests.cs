@@ -1,21 +1,28 @@
-﻿using System;
+﻿using FluentAssertions;
+using GildedRose.Business;
+using GildedRose.Business.Services;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Xunit;
 
-namespace GildedRose.Business.Strategies
+namespace GildedRose.NUnitTests.GildedRoseStoreTests
 {
     public class ConjuredItemTests
     {
         private GildedRoseStore _gildedRose;
 
-        
+        [SetUp]
+        public void Setup()
+        {
+            _gildedRose = new GildedRoseStore(new StrategyFactory());
+        }
 
-        [Fact]
+        [Test]
         public void UpdateQuality_GivenConjuredItem_QualityShouldBeMinusTwo()
         {
 
-            _gildedRose = new GildedRoseStore(new List<Item>()
+            var items = new List<Item>()
             {
                new Item()
                 {
@@ -23,18 +30,18 @@ namespace GildedRose.Business.Strategies
                     Quality = 20,
                     SellIn = 10
                 }
-            });
+            };
 
-            _gildedRose.UpdateQuality();
+            _gildedRose.UpdateQuality(items);
 
-            Assert.Equal(18, _gildedRose.GetItems()[0].Quality);
+            items[0].Quality.Should().Be(18);
         }
 
-        [Fact]
+        [Test]
         public void UpdateQuality_GivenConjuredItem_SellInShouldBeMinusOne()
         {
 
-            _gildedRose = new GildedRoseStore(new List<Item>()
+            var items = new List<Item>()
             {
                new Item()
                 {
@@ -42,18 +49,18 @@ namespace GildedRose.Business.Strategies
                     Quality = 20,
                     SellIn = 10
                 }
-            });
+            };
 
-            _gildedRose.UpdateQuality();
+            _gildedRose.UpdateQuality(items);
 
-            Assert.Equal(9, _gildedRose.GetItems()[0].SellIn);
+            items[0].SellIn.Should().Be(9);
         }
 
-        [Fact]
+        [Test]
         public void UpdateQuality_GivenConjuredItem_QualityDoesNotGoBelowZero()
         {
 
-            _gildedRose = new GildedRoseStore(new List<Item>()
+            var items = new List<Item>()
             {
                new Item()
                 {
@@ -61,18 +68,18 @@ namespace GildedRose.Business.Strategies
                     Quality = 0,
                     SellIn = 10
                 }
-            });
+            };
 
-            _gildedRose.UpdateQuality();
+            _gildedRose.UpdateQuality(items);
 
-            Assert.Equal(0, _gildedRose.GetItems()[0].Quality);
+            items[0].Quality.Should().Be(0);
         }
 
-        [Fact]
+        [Test]
         public void UpdateQuality_GivenConjuredItemRanTwice_SellInIsNegative()
         {
 
-            _gildedRose = new GildedRoseStore(new List<Item>()
+            var items = new List<Item>()
             {
                new Item()
                 {
@@ -80,19 +87,19 @@ namespace GildedRose.Business.Strategies
                     Quality = 10,
                     SellIn = 1
                 }
-            });
+            };
 
-            _gildedRose.UpdateQuality();
-            _gildedRose.UpdateQuality();
+            _gildedRose.UpdateQuality(items);
+            _gildedRose.UpdateQuality(items);
 
-            Assert.Equal(-1, _gildedRose.GetItems()[0].SellIn);
+            items[0].SellIn.Should().Be(-1);
         }
 
-        [Fact]
+        [Test]
         public void UpdateQuality_GivenConjuredItemRanThreeTimes_QualityDecreaseisQuadripledWhenSellInIsNegative()
         {
 
-            _gildedRose = new GildedRoseStore(new List<Item>()
+            var items = new List<Item>()
             {
                new Item()
                 {
@@ -100,13 +107,15 @@ namespace GildedRose.Business.Strategies
                     Quality = 20,
                     SellIn = 1
                 }
-            });
+            };
 
-            _gildedRose.UpdateQuality();
-            _gildedRose.UpdateQuality();
-            _gildedRose.UpdateQuality();
+            _gildedRose.UpdateQuality(items);
+            _gildedRose.UpdateQuality(items);
+            _gildedRose.UpdateQuality(items);
 
-            Assert.Equal(10, _gildedRose.GetItems()[0].Quality);
+            items[0].Quality.Should().Be(10);
+
+          
         }
 
         

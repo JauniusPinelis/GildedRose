@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Business", "Gild
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.ConsoleApp", "GildedRose.ConsoleApp\GildedRose.ConsoleApp.csproj", "{52C0DA78-F50D-4D30-9DCE-B2545DCD1CCF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.UnitTests", "GildedRose.UnitTests\GildedRose.UnitTests.csproj", "{5A90CB08-3B85-403D-A032-B4F4F79114F5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedStore.NUnitTests", "GildedStore.NUnitTests\GildedStore.NUnitTests.csproj", "{99F0A5AE-32E5-4575-8281-4B2091B01832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedStore.NUnitTests", "GildedStore.NUnitTests\GildedStore.NUnitTests.csproj", "{99F0A5AE-32E5-4575-8281-4B2091B01832}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{52C0DA78-F50D-4D30-9DCE-B2545DCD1CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C0DA78-F50D-4D30-9DCE-B2545DCD1CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52C0DA78-F50D-4D30-9DCE-B2545DCD1CCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A90CB08-3B85-403D-A032-B4F4F79114F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A90CB08-3B85-403D-A032-B4F4F79114F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A90CB08-3B85-403D-A032-B4F4F79114F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A90CB08-3B85-403D-A032-B4F4F79114F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99F0A5AE-32E5-4575-8281-4B2091B01832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99F0A5AE-32E5-4575-8281-4B2091B01832}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F0A5AE-32E5-4575-8281-4B2091B01832}.Release|Any CPU.ActiveCfg = Release|Any CPU

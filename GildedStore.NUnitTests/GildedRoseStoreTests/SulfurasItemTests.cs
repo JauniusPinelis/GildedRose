@@ -1,37 +1,27 @@
-﻿using GildedRose.Business;
+﻿using FluentAssertions;
+using GildedRose.Business;
+using GildedRose.Business.Services;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Xunit;
 
-namespace GildedRose.UnitTests.GildedRoseStoreTests
+namespace GildedRose.NUnitTests.GildedRoseStoreTests
 {
     public class SulfurasItemTests
     {
         private GildedRoseStore _gildedRose;
 
-        [Fact]
-        public void UpdateQuality_GivenSulfurasItem_QualityShouldNotChange()
+        [SetUp]
+        public void Setup()
         {
-            _gildedRose = new GildedRoseStore(new List<Item>()
-            {
-               new Item()
-                {
-                    Name = "Sulfuras, Hand of Ragnaros",
-                    Quality = 80,
-                    SellIn = 10
-                }
-            });
-
-            _gildedRose.UpdateQuality();
-
-            Assert.Equal(80, _gildedRose.GetItems()[0].Quality);
+            _gildedRose = new GildedRoseStore(new StrategyFactory());
         }
 
-        [Fact]
-        public void UpdateQuality_GivenSulfurasItem_SellInShouldNotChange()
+        [Test]
+        public void UpdateQuality_GivenSulfurasItem_QualityShouldNotChange()
         {
-            _gildedRose = new GildedRoseStore(new List<Item>()
+            var items = new List<Item>()
             {
                new Item()
                 {
@@ -39,11 +29,29 @@ namespace GildedRose.UnitTests.GildedRoseStoreTests
                     Quality = 80,
                     SellIn = 10
                 }
-            });
+            };
 
-            _gildedRose.UpdateQuality();
+            _gildedRose.UpdateQuality(items);
 
-            Assert.Equal(10, _gildedRose.GetItems()[0].SellIn);
+            items[0].Quality.Should().Be(80);
+        }
+
+        [Test]
+        public void UpdateQuality_GivenSulfurasItem_SellInShouldNotChange()
+        {
+            var items = new List<Item>()
+            {
+               new Item()
+                {
+                    Name = "Sulfuras, Hand of Ragnaros",
+                    Quality = 80,
+                    SellIn = 10
+                }
+            };
+
+            _gildedRose.UpdateQuality(items);
+
+            items[0].Quality.Should().Be(80);
         }
     }
 }
